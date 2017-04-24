@@ -151,10 +151,10 @@ with g.as_default():
         net = slim.fully_connected(inputs, 1024,
                                    weights_initializer=tf.random_normal_initializer(stddev=0.1),
                                    scope="fc1")
-        net = slim.fully_connected(inputs, 256,
+        net = slim.fully_connected(net, 256,
                                    weights_initializer=tf.random_normal_initializer(stddev=0.1),
                                    scope="fc2")
-        net = slim.fully_connected(inputs, 10,
+        net = slim.fully_connected(net, 10,
                                    weights_initializer=tf.random_normal_initializer(stddev=0.1),
                                    scope="fc3")
         net = slim.dropout(net, 0.5, scope="dropout4")
